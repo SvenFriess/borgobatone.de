@@ -14,7 +14,7 @@ import subprocess
 import hashlib
 import traceback
 from pathlib import Path
-from typing import Iterable, Iterator, Optional, Tuple
+from typing import Iterator, Optional, Tuple
 
 # =======================
 # Kontext-Loader mit Hot-Reload
@@ -66,13 +66,50 @@ def build_prompt(user_input: str) -> str:
     return prompt
 
 # =======================
+# Kontext-Betriebsmodus & Helfer
+# =======================
+# CTX_MODE=strict|assist  (default: assist)
+CTX_MODE = os.getenv("CTX_MODE", "assist").strip().lower()
+if CTX_MODE not in ("strict", "assist"):
+    CTX_MODE = "assist"
+
+def ctx_meta() -> dict:
+    """Metadaten zum aktuell geladenen Kontext (für !ctx-info)."""
+    try:
+        mtime = CONTEXT_FILE.stat().st_mtime if CONTEXT_FILE.exists() else None
+    except Exception:
+        mtime = None
+    from datetime import datetime
+    return {
+        "path": str(CONTEXT_FILE),
+        "len": len(_CTX_CACHE or ""),
+        "sha1": hashlib.sha1((_CTX_CACHE or "").encode("utf-8")).hexdigest()[:8] if _CTX_CACHE else "-",
+        "mtime": datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M:%S") if mtime else "-",
+        "mode": CTX_MODE,
+    }
+
+def ctx_quick_hits(question: str, context: str) -> int:
+    """
+    Sehr einfache Heuristik: zähle, wie viele >2 Zeichen lange Tokens der Frage im Kontext vorkommen.
+    Dient nur als 'Guardrail' für CTX_MODE=strict.
+    """
+    q = (question or "").lower()
+    if not q or not context:
+        return 0
+    tokens = [t for t in re.split(r"[^\wäöüÄÖÜß]+", q) if len(t) > 2]
+    if not tokens:
+        return 0
+    ctx_low = context.lower()
+    return sum(1 for t in tokens if t in ctx_low)
+
+# =======================
 # Konfiguration
 # =======================
 BOT_NUMBER = os.environ.get("BOT_NUMBER", "+4915755901211").strip()
 SIGNAL_CLI = os.environ.get("SIGNAL_CLI", "signal-cli").strip()
 GROUP_ID_STATIC = os.environ.get("GROUP_ID", "").strip()        # optional: feste Zielgruppe (Base64-ID)
 
-# RECEIVE_TIMEOUT aus ENV lesen, mit Sicherheits-Defaults
+# RECEIVE_TIMEOUT aus ENV lesen, mit Sicherheits-Defaults & Warnungen
 timeout_raw = os.environ.get("RECEIVE_TIMEOUT", "30")
 try:
     RECEIVE_TIMEOUT = int(timeout_raw)
@@ -107,38 +144,70 @@ logging.info("⚙️ Konfiguration:")
 logging.info(f"   BOT_NUMBER      = {BOT_NUMBER}")
 logging.info(f"   GROUP_ID_STATIC = {GROUP_ID_STATIC or '(keine)'}")
 logging.info(f"   CONTEXT_FILE    = {CONTEXT_FILE}")
+logging.info(f"   CTX_MODE        = {CTX_MODE}")
 logging.info(f"   RECEIVE_TIMEOUT = {RECEIVE_TIMEOUT} Sekunden")
 logging.info(f"   USE_JSON        = {USE_JSON}")
 
 # =======================
-# LLM-Integration (optional)
+# LLM-Integration (assist/strict + Fallback)
 # =======================
 def llm_answer(question: str, context: str) -> str:
     """
-    Versucht, ein lokales LLM zu nutzen (falls Modul vorhanden).
-    Fallback: sehr einfacher kontextbasierter Antwortgenerator.
-    Erwartetes Interface (optional):
-        from local_llm_interface import generate_answer
-        generate_answer(user_question: str, context: str) -> str
+    LLM-Aufruf in zwei Modi:
+      - strict: nur aus Kontext antworten; wenn keine sinnvollen Treffer → kurzer Hinweis
+      - assist: Kontext als Quelle/Leitplanke nutzen, aber frei antworten erlaubt
+    Fallback bleibt erhalten, falls kein LLM verfügbar ist.
     """
+    # Guardrail bei strict
+    if CTX_MODE == "strict":
+        hits = ctx_quick_hits(question, context)
+        if hits == 0:
+            return "🔒 Im lokalen Kontext finde ich dazu nichts. Formuliere anders oder frage etwas, das im Borgo-Kontext steht."
+
+    # Einheitlicher Prompt für generate_answer (falls vorhanden)
+    system_rules = (
+        "Du bist der Borgo-Batone-Hausbot. Antworte präzise und knapp.\n"
+        "Zitiere und nutze ausschließlich Informationen aus dem bereitgestellten Kontext.\n"
+        "Wenn etwas nicht im Kontext steht, sage klar 'Nicht im Kontext' und erfinde nichts.\n"
+    )
+    if CTX_MODE == "assist":
+        system_rules = (
+            "Du bist der Borgo-Batone-Hausbot. Antworte präzise und knapp.\n"
+            "Nutze den Kontext zuerst; wenn etwas nicht im Kontext steht, darfst du vorsichtig ergänzen,\n"
+            "ohne zu halluzinieren. Markiere Ergänzungen deutlich als 'Außerhalb des Kontexts'.\n"
+        )
+
+    prompt = (
+        f"### Regeln\n{system_rules}\n\n"
+        f"### Kontext (borgobatone.txt)\n{context}\n\n"
+        f"### Frage\n{question}\n\n"
+        f"### Antwort (kurz, deutsch):"
+    )
+
     try:
+        # Optionales lokales Interface
         from local_llm_interface import generate_answer  # type: ignore
-        ans = generate_answer(question, context or "")
+        # unterstütze flexible Signaturen: (question, context) ODER **kwargs
+        try:
+            ans = generate_answer(question=question, context=context, full_prompt=prompt)  # bevorzugt
+        except TypeError:
+            ans = generate_answer(question, context)  # fallback signatur
         if isinstance(ans, str) and ans.strip():
             return ans.strip()
     except Exception as e:
-        logging.warning(f"LLM nicht verfügbar oder Fehler: {e}")
+        logging.info(f"LLM nicht verfügbar oder Fehler – nutze Fallback: {e}")
 
-    # Simpler kontextueller Fallback (greift Stichworte aus dem Kontext auf)
+    # Fallback: einfacher Kontextschnipsel (wie bisher)
     if not context:
         return "ℹ️ Ich habe dazu gerade keinen lokalen Kontext. Formuliere deine Frage bitte etwas konkreter."
 
-    # naive „Best Effort“-Suche einiger Sätze aus dem Kontext
     q = question.strip().lower()
     lines = [ln.strip() for ln in context.splitlines() if ln.strip()]
     hit_lines = [ln for ln in lines if any(tok in ln.lower() for tok in q.split() if len(tok) > 2)]
     if not hit_lines:
-        return "🔎 Ich habe in meinem lokalen Kontext nichts Passendes gefunden. Frag gerne anders oder konkreter."
+        if CTX_MODE == "strict":
+            return "🔒 Nicht im Kontext."
+        return "🔎 Ich habe im lokalen Kontext nichts Passendes gefunden. Frag gerne anders oder konkreter."
     snippet = "\n".join(hit_lines[:6])
     return f"📚 Aus dem lokalen Kontext:\n{snippet}"
 
@@ -171,6 +240,23 @@ def parse_command(msg: str) -> Tuple[str, str]:
         cmd = "einkaufen"
     return cmd, rest
 
+# =======================
+# Fixe Kommandos (inkl. Kontext-Tools)
+# =======================
+def command_ctx_info() -> str:
+    m = ctx_meta()
+    return (f"🧾 Kontextinfo\n"
+            f"- Datei: {m['path']}\n"
+            f"- Länge: {m['len']} Zeichen\n"
+            f"- SHA1:  {m['sha1']}\n"
+            f"- mtime: {m['mtime']}\n"
+            f"- Modus: {m['mode']}\n")
+
+def command_ctx_reload() -> str:
+    load_context(force=True)
+    m = ctx_meta()
+    return f"🔁 Kontext neu geladen (len={m['len']}, sha1={m['sha1']})."
+
 def build_answer(cmd: str, rest: str) -> str:
     # 1) Harte, sofortige Antworten (synchron, ohne LLM)
     if cmd in ("hallo", "hello", "hi"):
@@ -185,13 +271,18 @@ def build_answer(cmd: str, rest: str) -> str:
         )
     if cmd in ("pizza",):
         return "🍕 Pizza-Info folgt vor Ort – frag gern nach dem Pizzaofen-Setup."
+    if cmd in ("ctx-info", "ctxinfo"):
+        return command_ctx_info()
+    if cmd in ("ctx-reload", "ctxreload"):
+        return command_ctx_reload()
 
     # 2) „help“ / unbekannt → kurzes, nicht-aufgeblähtes Fallback
     if cmd in ("help", "hilfe", "?", ""):
-        return ("ℹ️ **Borgo-Bot Befehle:** `!bot hallo`, `!bot einkaufen`, `!bot status`.\n"
+        return ("ℹ️ **Borgo-Bot Befehle:** `!bot hallo`, `!bot einkaufen`, `!bot status`, "
+                "`!bot ctx-info`, `!bot ctx-reload`.\n"
                 "Frag sonst frei mit `!bot <Frage>` – ich nutze dann lokalen Kontext (`borgobatone.txt`).")
 
-    # 3) Freier Prompt → LLM (mit Hot-Reload-Kontext)
+    # 3) Freier Prompt → LLM (mit Hot-Reload-Kontext & Modus)
     question = normalize_text(f"{cmd} {rest}".strip())
     if not question:
         return ("ℹ️ **Unklare Eingabe.** Beispiele: `!bot hallo`, `!bot einkaufen`, "
