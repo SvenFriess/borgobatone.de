@@ -366,7 +366,7 @@ def fixed_help_text() -> str:
         ".\nFrag sonst frei mit `!bot <Frage>` – ich nutze dann den Kontext (`borgobatone.txt`)."
     )
 
-def try_fixed_response(cmd: str) -> str | None:
+def try_fixed_response(cmd: str) -> Optional[str]:
     """Liefert eine feste Antwort, falls cmd bekannt ist (inkl. Alias-Auflösung)."""
     key = FIXED_ALIASES.get(cmd, cmd)
     if key in FIXED_RESPONSES:
@@ -484,10 +484,24 @@ def main() -> None:
                 cmd, rest = parse_command(msg_norm)
                 logging.debug(f"📥 Eingegangen: cmd='{cmd}' rest='{rest}'")
 
+
+                t0 = time.perf_counter()
+
+                t0 = time.perf_counter()
                 answer = build_answer(cmd, rest)
-                logging.debug(f"🧠 Antwort vorbereitet ({len(answer)} Zeichen)")
+                t1 = time.perf_counter()
+
+                snippet = answer[:30]  # 👉 erste 30 Zeichen der Antwort
+                logging.debug(
+                    f"🧠 Antwort vorbereitet ({len(answer)} Zeichen) in {t1 - t0:.3f}s; first30={snippet!r}"
+                )
 
                 target_gid = GROUP_ID_STATIC or group_id
+                send_group_message(target_gid, answer)
+                logging.debug("📤 Antwort gesendet")
+                logging.debug(f"SEND first30={snippet!r} group={target_gid[:8]}…")
+
+                logging.debug(f"SEND first30={snippet!r} group={target_gid[:8]}…")
                 send_group_message(target_gid, answer)
                 logging.debug("📤 Antwort gesendet")
         except Exception as e:
