@@ -1,0 +1,362 @@
+2025-08-26 23:09:49,225 [INFO] 🚀 Bot gestartet
+2025-08-26 23:09:49,225 [INFO] 🤖 Bot läuft und lauscht ...
+2025-08-26 23:09:49,226 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:09:51,248 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:09:52,254 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:09:54,295 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:09:55,301 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:09:57,301 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:09:58,307 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:00,314 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:01,320 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:03,293 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:04,298 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:06,296 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:07,301 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:09,344 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:10,350 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:12,348 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:13,354 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:15,448 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:16,454 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:18,463 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:19,468 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:21,502 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:22,508 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:24,587 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:25,593 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:27,649 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:28,650 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:30,673 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:31,678 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:33,710 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:34,713 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:36,772 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:37,777 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:39,779 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:40,785 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:42,796 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:43,801 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:45,822 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:46,827 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:48,850 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:49,856 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:51,797 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:52,803 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:54,772 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:55,775 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:10:57,753 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:10:58,758 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:00,762 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:01,768 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:03,719 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:04,724 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:06,745 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:07,751 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:09,759 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:10,765 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:12,796 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:13,802 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:15,787 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:16,792 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:18,827 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:19,833 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:21,833 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:22,838 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:24,865 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:25,871 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:27,996 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:28,997 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:31,032 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:32,037 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:34,080 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:35,086 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:37,077 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:38,083 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:40,207 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:41,213 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:43,279 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:44,285 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:46,338 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:47,344 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:49,370 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:50,372 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:52,443 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:53,448 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:55,520 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:56,526 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:11:58,551 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:11:59,553 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:01,572 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:02,578 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:04,618 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:05,620 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:07,629 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:08,635 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:10,618 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:11,619 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:13,594 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:14,600 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:16,708 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:17,713 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:19,692 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:20,697 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:22,724 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:23,730 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:25,680 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:26,685 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:28,659 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:29,665 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:31,755 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:32,760 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:34,754 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:35,760 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:37,765 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:38,771 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:40,870 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:41,875 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:43,865 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:44,871 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:46,951 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:47,957 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:50,003 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:51,008 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:53,013 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:54,018 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:56,089 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:12:57,094 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:12:59,120 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:00,121 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:02,176 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:03,182 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:05,229 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:06,235 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:08,221 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:09,227 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:11,205 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:12,210 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:14,266 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:15,271 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:17,331 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:18,336 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:20,340 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:21,346 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:23,326 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:24,332 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:26,444 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:27,450 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:29,467 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:30,473 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:32,505 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:33,510 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:35,504 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:36,509 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:13:38,516 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:13:39,521 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 0
+2025-08-26 23:14:46,866 [INFO] 🚀 Bot gestartet
+2025-08-26 23:14:46,866 [INFO] 🤖 Bot läuft und lauscht ...
+2025-08-26 23:14:46,867 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 120
+2025-08-26 23:16:48,859 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:16:49,864 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 120
+2025-08-26 23:17:45,224 [DEBUG] RECV: WARN  ReceiveHelper - Connection closed unexpectedly, reconnecting in 100 ms
+2025-08-26 23:18:30,564 [DEBUG] RECV: Envelope from: “Sven Friess” +491726945704 (device: 1) to +4915755901211
+2025-08-26 23:18:30,565 [DEBUG] RECV: Timestamp: 1756243110349 (2025-08-26T21:18:30.349Z)
+2025-08-26 23:18:30,565 [DEBUG] RECV: Server timestamps: received: 1756243110448 (2025-08-26T21:18:30.448Z) delivered: 1756243110451 (2025-08-26T21:18:30.451Z)
+2025-08-26 23:18:30,565 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:18:30,565 [DEBUG] RECV: Received a typing message
+2025-08-26 23:18:30,565 [DEBUG] RECV:   Action: STARTED
+2025-08-26 23:18:30,565 [DEBUG] RECV:   Timestamp: 1756243110349 (2025-08-26T21:18:30.349Z)
+2025-08-26 23:18:30,565 [DEBUG] RECV:   Group Info:
+2025-08-26 23:18:30,565 [DEBUG] RECV:     Id: 21oiqcpO37/ScyKFhmctf/45MQ5QYdN2h/VQp9WMKCM=
+2025-08-26 23:18:30,574 [DEBUG] RECV:     Name: Borgo-Bot TEST
+2025-08-26 23:18:30,574 [DEBUG] RECV: 
+2025-08-26 23:18:40,555 [DEBUG] RECV: Envelope from: “Sven Friess” +491726945704 (device: 1) to +4915755901211
+2025-08-26 23:18:40,555 [DEBUG] RECV: Timestamp: 1756243120350 (2025-08-26T21:18:40.350Z)
+2025-08-26 23:18:40,556 [DEBUG] RECV: Server timestamps: received: 1756243120421 (2025-08-26T21:18:40.421Z) delivered: 1756243120424 (2025-08-26T21:18:40.424Z)
+2025-08-26 23:18:40,556 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:18:40,556 [DEBUG] RECV: Received a typing message
+2025-08-26 23:18:40,556 [DEBUG] RECV:   Action: STARTED
+2025-08-26 23:18:40,556 [DEBUG] RECV:   Timestamp: 1756243120350 (2025-08-26T21:18:40.350Z)
+2025-08-26 23:18:40,556 [DEBUG] RECV:   Group Info:
+2025-08-26 23:18:40,556 [DEBUG] RECV:     Id: 21oiqcpO37/ScyKFhmctf/45MQ5QYdN2h/VQp9WMKCM=
+2025-08-26 23:18:40,560 [DEBUG] RECV:     Name: Borgo-Bot TEST
+2025-08-26 23:18:40,560 [DEBUG] RECV: 
+2025-08-26 23:18:45,589 [DEBUG] RECV: Envelope from: “Sven Friess” +491726945704 (device: 1) to +4915755901211
+2025-08-26 23:18:45,589 [DEBUG] RECV: Timestamp: 1756243125329 (2025-08-26T21:18:45.329Z)
+2025-08-26 23:18:45,590 [DEBUG] RECV: Server timestamps: received: 1756243125426 (2025-08-26T21:18:45.426Z) delivered: 1756243125429 (2025-08-26T21:18:45.429Z)
+2025-08-26 23:18:45,590 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:18:45,590 [DEBUG] RECV: Message timestamp: 1756243125329 (2025-08-26T21:18:45.329Z)
+2025-08-26 23:18:45,590 [DEBUG] RECV: Body: !bot hallo
+2025-08-26 23:18:45,590 [DEBUG] RECV: Group info:
+2025-08-26 23:18:45,590 [DEBUG] RECV:   Id: 21oiqcpO37/ScyKFhmctf/45MQ5QYdN2h/VQp9WMKCM=
+2025-08-26 23:18:45,593 [DEBUG] RECV:   Name: Borgo-Bot TEST
+2025-08-26 23:18:45,593 [DEBUG] RECV:   Revision: 15
+2025-08-26 23:18:45,593 [DEBUG] RECV:   Type: DELIVER
+2025-08-26 23:18:45,593 [DEBUG] RECV: With profile key
+2025-08-26 23:18:45,593 [DEBUG] RECV: 
+2025-08-26 23:18:45,593 [INFO] 📥 Nachricht erkannt: !bot hallo
+2025-08-26 23:18:45,593 [INFO] 🧠 Antwort: 👋 Hallo! Ich bin da.
+2025-08-26 23:18:45,593 [DEBUG] SEND: signal-cli -u +4915755901211 send -g 21oiqcpO37/ScyKFhmctf/45MQ5QYdN2h/VQp9WMKCM= -m '👋 Hallo! Ich bin da.'
+INFO  SignalAccount - Config file is in use by another instance, waiting…
+INFO  SignalAccount - Config file lock acquired.
+1756243342603
+2025-08-26 23:22:23,715 [INFO] 📤 Antwort gesendet
+2025-08-26 23:22:23,716 [DEBUG] RECV: Envelope from: “Andreas Ingerl” 06e8527a-269b-4050-836a-695ea25122c7 (device: 3) to +4915755901211
+2025-08-26 23:22:23,716 [DEBUG] RECV: Timestamp: 1756243218897 (2025-08-26T21:20:18.897Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV: Server timestamps: received: 1756243219041 (2025-08-26T21:20:19.041Z) delivered: 1756243219043 (2025-08-26T21:20:19.043Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:23,716 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:23,716 [DEBUG] RECV:   When: 1756243218897 (2025-08-26T21:20:18.897Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV:   Is read receipt
+2025-08-26 23:22:23,716 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:23,716 [DEBUG] RECV:   - 1756239594905 (2025-08-26T20:19:54.905Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV: 
+2025-08-26 23:22:23,716 [DEBUG] RECV: Envelope from: “Andreas Ingerl” 06e8527a-269b-4050-836a-695ea25122c7 (device: 3) to +4915755901211
+2025-08-26 23:22:23,716 [DEBUG] RECV: Timestamp: 1756243220318 (2025-08-26T21:20:20.318Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV: Server timestamps: received: 1756243220459 (2025-08-26T21:20:20.459Z) delivered: 1756243220461 (2025-08-26T21:20:20.461Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:23,716 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:23,716 [DEBUG] RECV:   When: 1756243220318 (2025-08-26T21:20:20.318Z)
+2025-08-26 23:22:23,716 [DEBUG] RECV:   Is read receipt
+2025-08-26 23:22:23,716 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:23,717 [DEBUG] RECV:   - 1756239708384 (2025-08-26T20:21:48.384Z)
+2025-08-26 23:22:23,717 [DEBUG] RECV: 
+2025-08-26 23:22:23,717 [DEBUG] RECV: Envelope from: “Andreas Ingerl” 06e8527a-269b-4050-836a-695ea25122c7 (device: 3) to +4915755901211
+2025-08-26 23:22:23,717 [DEBUG] RECV: Timestamp: 1756243220830 (2025-08-26T21:20:20.830Z)
+2025-08-26 23:22:23,717 [DEBUG] RECV: Server timestamps: received: 1756243220992 (2025-08-26T21:20:20.992Z) delivered: 1756243220994 (2025-08-26T21:20:20.994Z)
+2025-08-26 23:22:23,717 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:23,717 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:23,717 [DEBUG] RECV:   When: 1756243220830 (2025-08-26T21:20:20.830Z)
+2025-08-26 23:22:23,717 [DEBUG] RECV:   Is read receipt
+2025-08-26 23:22:23,717 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:23,717 [DEBUG] RECV:   - 1756241716797 (2025-08-26T20:55:16.797Z)
+2025-08-26 23:22:23,717 [DEBUG] RECV: 
+2025-08-26 23:22:23,717 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:22:24,722 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 120
+2025-08-26 23:22:26,623 [DEBUG] RECV: Envelope from: “Sven Friess” +491726945704 (device: 1) to +4915755901211
+2025-08-26 23:22:26,624 [DEBUG] RECV: Timestamp: 1756243343745 (2025-08-26T21:22:23.745Z)
+2025-08-26 23:22:26,624 [DEBUG] RECV: Server timestamps: received: 1756243343813 (2025-08-26T21:22:23.813Z) delivered: 1756243346169 (2025-08-26T21:22:26.169Z)
+2025-08-26 23:22:26,624 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,624 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,624 [DEBUG] RECV:   When: 1756243343745 (2025-08-26T21:22:23.745Z)
+2025-08-26 23:22:26,624 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,624 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,624 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,624 [DEBUG] RECV: 
+2025-08-26 23:22:26,627 [DEBUG] RECV: Envelope from: “Andreas Ingerl” 06e8527a-269b-4050-836a-695ea25122c7 (device: 1) to +4915755901211
+2025-08-26 23:22:26,627 [DEBUG] RECV: Timestamp: 1756243344179 (2025-08-26T21:22:24.179Z)
+2025-08-26 23:22:26,627 [DEBUG] RECV: Server timestamps: received: 1756243344313 (2025-08-26T21:22:24.313Z) delivered: 1756243346169 (2025-08-26T21:22:26.169Z)
+2025-08-26 23:22:26,627 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,627 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,627 [DEBUG] RECV:   When: 1756243344179 (2025-08-26T21:22:24.179Z)
+2025-08-26 23:22:26,627 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,627 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,627 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,627 [DEBUG] RECV: 
+2025-08-26 23:22:26,629 [DEBUG] RECV: Envelope from: “Andreas Ingerl” 06e8527a-269b-4050-836a-695ea25122c7 (device: 2) to +4915755901211
+2025-08-26 23:22:26,629 [DEBUG] RECV: Timestamp: 1756243344101 (2025-08-26T21:22:24.101Z)
+2025-08-26 23:22:26,629 [DEBUG] RECV: Server timestamps: received: 1756243344606 (2025-08-26T21:22:24.606Z) delivered: 1756243346169 (2025-08-26T21:22:26.169Z)
+2025-08-26 23:22:26,629 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,629 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,629 [DEBUG] RECV:   When: 1756243344101 (2025-08-26T21:22:24.101Z)
+2025-08-26 23:22:26,630 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,630 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,630 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,630 [DEBUG] RECV: 
+2025-08-26 23:22:26,631 [DEBUG] RECV: Envelope from: “Sven Friess” +4916090822476 (device: 1) to +4915755901211
+2025-08-26 23:22:26,631 [DEBUG] RECV: Timestamp: 1756243344401 (2025-08-26T21:22:24.401Z)
+2025-08-26 23:22:26,632 [DEBUG] RECV: Server timestamps: received: 1756243344704 (2025-08-26T21:22:24.704Z) delivered: 1756243346169 (2025-08-26T21:22:26.169Z)
+2025-08-26 23:22:26,632 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,632 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,632 [DEBUG] RECV:   When: 1756243344401 (2025-08-26T21:22:24.401Z)
+2025-08-26 23:22:26,632 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,632 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,632 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,632 [DEBUG] RECV: 
+2025-08-26 23:22:26,634 [DEBUG] RECV: Envelope from: “Katja Friess” +491719561868 (device: 1) to +4915755901211
+2025-08-26 23:22:26,634 [DEBUG] RECV: Timestamp: 1756243344949 (2025-08-26T21:22:24.949Z)
+2025-08-26 23:22:26,634 [DEBUG] RECV: Server timestamps: received: 1756243345023 (2025-08-26T21:22:25.023Z) delivered: 1756243346170 (2025-08-26T21:22:26.170Z)
+2025-08-26 23:22:26,634 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,634 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,634 [DEBUG] RECV:   When: 1756243344949 (2025-08-26T21:22:24.949Z)
+2025-08-26 23:22:26,634 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,634 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,634 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,634 [DEBUG] RECV: 
+2025-08-26 23:22:26,635 [DEBUG] RECV: Envelope from: “Mirko” 3ea480dc-8365-4367-9197-85bd3868bea0 (device: 1) to +4915755901211
+2025-08-26 23:22:26,635 [DEBUG] RECV: Timestamp: 1756243345658 (2025-08-26T21:22:25.658Z)
+2025-08-26 23:22:26,636 [DEBUG] RECV: Server timestamps: received: 1756243345730 (2025-08-26T21:22:25.730Z) delivered: 1756243346170 (2025-08-26T21:22:26.170Z)
+2025-08-26 23:22:26,636 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,636 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,636 [DEBUG] RECV:   When: 1756243345658 (2025-08-26T21:22:25.658Z)
+2025-08-26 23:22:26,636 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,636 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,636 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,636 [DEBUG] RECV: 
+2025-08-26 23:22:26,637 [DEBUG] RECV: Envelope from: “Carola L” da8d4515-cb6e-434f-9c97-806af2ee98e3 (device: 1) to +4915755901211
+2025-08-26 23:22:26,637 [DEBUG] RECV: Timestamp: 1756243345747 (2025-08-26T21:22:25.747Z)
+2025-08-26 23:22:26,637 [DEBUG] RECV: Server timestamps: received: 1756243345900 (2025-08-26T21:22:25.900Z) delivered: 1756243346170 (2025-08-26T21:22:26.170Z)
+2025-08-26 23:22:26,637 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,637 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,637 [DEBUG] RECV:   When: 1756243345747 (2025-08-26T21:22:25.747Z)
+2025-08-26 23:22:26,637 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,637 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,637 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,637 [DEBUG] RECV: 
+2025-08-26 23:22:26,935 [DEBUG] RECV: Envelope from: “Alex Agudo” 99bade18-1a49-443f-b123-df2050785204 (device: 1) to +4915755901211
+2025-08-26 23:22:26,935 [DEBUG] RECV: Timestamp: 1756243344379 (2025-08-26T21:22:24.379Z)
+2025-08-26 23:22:26,936 [DEBUG] RECV: Server timestamps: received: 1756243346906 (2025-08-26T21:22:26.906Z) delivered: 1756243346908 (2025-08-26T21:22:26.908Z)
+2025-08-26 23:22:26,936 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:26,936 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:26,936 [DEBUG] RECV:   When: 1756243344379 (2025-08-26T21:22:24.379Z)
+2025-08-26 23:22:26,936 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:22:26,936 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:26,936 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:26,936 [DEBUG] RECV: 
+2025-08-26 23:22:27,263 [DEBUG] RECV: Envelope from: “Sven Friess” +491726945704 (device: 1) to +4915755901211
+2025-08-26 23:22:27,264 [DEBUG] RECV: Timestamp: 1756243347094 (2025-08-26T21:22:27.094Z)
+2025-08-26 23:22:27,264 [DEBUG] RECV: Server timestamps: received: 1756243347167 (2025-08-26T21:22:27.167Z) delivered: 1756243347168 (2025-08-26T21:22:27.168Z)
+2025-08-26 23:22:27,264 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:22:27,264 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:22:27,264 [DEBUG] RECV:   When: 1756243347094 (2025-08-26T21:22:27.094Z)
+2025-08-26 23:22:27,264 [DEBUG] RECV:   Is read receipt
+2025-08-26 23:22:27,264 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:22:27,264 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:22:27,264 [DEBUG] RECV: 
+2025-08-26 23:23:37,311 [DEBUG] RECV: Envelope from: “Alex Agudo” 99bade18-1a49-443f-b123-df2050785204 (device: 1) to +4915755901211
+2025-08-26 23:23:37,312 [DEBUG] RECV: Timestamp: 1756243416282 (2025-08-26T21:23:36.282Z)
+2025-08-26 23:23:37,312 [DEBUG] RECV: Server timestamps: received: 1756243417281 (2025-08-26T21:23:37.281Z) delivered: 1756243417282 (2025-08-26T21:23:37.282Z)
+2025-08-26 23:23:37,312 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:23:37,312 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:23:37,312 [DEBUG] RECV:   When: 1756243416282 (2025-08-26T21:23:36.282Z)
+2025-08-26 23:23:37,312 [DEBUG] RECV:   Is read receipt
+2025-08-26 23:23:37,313 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:23:37,313 [DEBUG] RECV:   - 1756238741372 (2025-08-26T20:05:41.372Z)
+2025-08-26 23:23:37,313 [DEBUG] RECV:   - 1756239594905 (2025-08-26T20:19:54.905Z)
+2025-08-26 23:23:37,313 [DEBUG] RECV:   - 1756239708384 (2025-08-26T20:21:48.384Z)
+2025-08-26 23:23:37,313 [DEBUG] RECV: 
+2025-08-26 23:23:40,775 [DEBUG] RECV: Envelope from: “Alex Agudo” 99bade18-1a49-443f-b123-df2050785204 (device: 1) to +4915755901211
+2025-08-26 23:23:40,775 [DEBUG] RECV: Timestamp: 1756243419648 (2025-08-26T21:23:39.648Z)
+2025-08-26 23:23:40,776 [DEBUG] RECV: Server timestamps: received: 1756243420745 (2025-08-26T21:23:40.745Z) delivered: 1756243420747 (2025-08-26T21:23:40.747Z)
+2025-08-26 23:23:40,776 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:23:40,776 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:23:40,776 [DEBUG] RECV:   When: 1756243419648 (2025-08-26T21:23:39.648Z)
+2025-08-26 23:23:40,776 [DEBUG] RECV:   Is read receipt
+2025-08-26 23:23:40,776 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:23:40,776 [DEBUG] RECV:   - 1756241716797 (2025-08-26T20:55:16.797Z)
+2025-08-26 23:23:40,776 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:23:40,776 [DEBUG] RECV: 
+2025-08-26 23:25:40,920 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:25:41,921 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 120
+2025-08-26 23:27:44,045 [WARNING] receive beendet (rc=0) – Neustart in 1s …
+2025-08-26 23:27:45,050 [DEBUG] START RECEIVE: signal-cli -u +4915755901211 receive -t 120
+2025-08-26 23:29:21,511 [DEBUG] RECV: Envelope from: “Nicole Agudo Berbel” 10db4db8-87b5-4540-9352-70b0aa02d4d7 (device: 1) to +4915755901211
+2025-08-26 23:29:21,512 [DEBUG] RECV: Timestamp: 1756243761224 (2025-08-26T21:29:21.224Z)
+2025-08-26 23:29:21,513 [DEBUG] RECV: Server timestamps: received: 1756243761429 (2025-08-26T21:29:21.429Z) delivered: 1756243761432 (2025-08-26T21:29:21.432Z)
+2025-08-26 23:29:21,513 [DEBUG] RECV: Sent by unidentified/sealed sender
+2025-08-26 23:29:21,513 [DEBUG] RECV: Received a receipt message
+2025-08-26 23:29:21,513 [DEBUG] RECV:   When: 1756243761224 (2025-08-26T21:29:21.224Z)
+2025-08-26 23:29:21,513 [DEBUG] RECV:   Is delivery receipt
+2025-08-26 23:29:21,513 [DEBUG] RECV:   Timestamps:
+2025-08-26 23:29:21,513 [DEBUG] RECV:   - 1756243342603 (2025-08-26T21:22:22.603Z)
+2025-08-26 23:29:21,513 [DEBUG] RECV: 

@@ -1,0 +1,76 @@
+BORGO BATONE – KONTEXT FÜR CHATBOT (Stand 2025-06-01)
+
+Willkommen im Borgo Batone – hier findest du alle zentralen Informationen für Besucher:innen des Projekts. Dieses Textfile wurde auf Grundlage des offiziellen PDFs ("Benvenuti – Travelguide and Housekeeping") erstellt und dient als Kontextquelle für den lokalen Chatbot. Es kann regelmäßig erweitert oder aktualisiert werden.
+
+--- WICHTIGSTE THEMEN ---
+
+🛒 EINKAUFEN
+- Kleiner Laden direkt an der Hauptstraße: „Alimentari Pini“ – frisches Brot, Milch, Obst, Gemüse. Besitzerin Veronica spricht Englisch.
+- Supermarkt Carrefour in S. Martino in Freddana
+- Große Supermärkte (Esselunga, Coop, Carrefour) in Lucca oder Viareggio
+- Bioladen in Lucca: NaturaSi, Via Roma 37a, Camaiore LU
+- Wochenmärkte in Lucca: mittwochs und samstags – Obst, Gemüse, Kleidung, Pflanzen
+- Lokaler Markt im Foro Boario (Monte San Quirico), samstags
+
+📶 WLAN
+- WLAN in der Villa Barsotti, Casa Giannotti, Casa Inglese 1 & 2
+- SSID: Borgo | Passwort: B3estUs3Cabl3
+- Zentraler Knotenpunkt im Keller der Villa
+- LAN-Zugang (Netzwerkkabel) in verschiedenen Gemeinschaftsräumen vorhanden
+- Casa Gabriello hat separaten LTE-Router
+
+🧘 YOGA
+- 15 Yoga-Sets (Matten, Blöcke, Gurte) im 2. OG der Villa
+- Reinigung der Matten mit biologischem Spray (immer am Lagerort dabei)
+- Nutzung ist auf Spendenbasis möglich (Infos bei Inès Lauber)
+
+♻️ MÜLL
+- Mülltrennung streng einzuhalten (Ab Mai 2025: keine Abholung bei Verstoß!)
+  - Gelbe Säcke: Plastik, Tetrapak, Alu
+  - Graue Säcke: Restmüll (kein Papier oder Bio!)
+  - Lila Säcke: Windeln, Monatshygiene
+  - Kompostsäcke: Biomüll
+  - Grüne Tonnen: Glas | Weiße Tonnen: Papier
+- Müllsammelstelle: vor der Villa
+- Neue Säcke: direkt bei den Abholenden erfragen
+- Bei Abreise: Müll selbst zur Müllstation bringen, wenn unklar, wann nächste Gäste kommen
+
+🍕 PIZZAOFEN
+- In Casa Gabriello
+- Großes Feuer starten → 1 Stunde brennen → Glut zur Seite schieben → Pizza backen
+- Achtung: Kein Wasser zum Löschen verwenden!
+- Mengenempfehlung für 12–14 Personen: 2,5 kg Mehl, 1 Flasche Passata, 12x Mozzarella, Gemüse nach Wahl
+- Asche abgekühlt in Restmüll entsorgen
+
+🥫 GEMEINSCHAFTSLEBEN
+- Küche der Villa Barsotti ist zentrale Gemeinschaftsküche
+- Nutzung zwischen 23–7 Uhr vermeiden
+- Vorratsschrank mit Basiszutaten vorhanden (Kaffee, Tee, Öl, Senf, Gewürze etc.)
+- Jeder trägt bei – finanziell oder durch Einkauf
+- Lebensmittel beschriften, offenes Essen möglichst luftdicht lagern
+- Regelmäßige Reinigung & Kommunikation erwünscht
+
+🚪 ABREISE
+- Zimmer besenrein & gelüftet hinterlassen
+- Müll entsorgen, Kühlschrank ausräumen
+- Geliehene Bettwäsche waschen & aufhängen
+- Schlüssel zurück ans Schlüsselbrett / Villa-Schlüssel in den Tresor
+
+🏠 BEWOHNBARE HÄUSER
+- Villa Barsotti, Casa Giannotti, Casa Inglese 1 & 2, Casa Gabriello, Il Leccio
+- Elektrizität, Heizung, Wasser und Gas sind je nach Haus unterschiedlich geregelt
+- Technische Probleme bitte in der Onsite-Gruppe oder an Hospitality melden
+
+🚗 ANREISE
+- Adresse für Google Maps: Borgo Batone, Via di Loppeglia, 55064 Pescaglia LU, Italien
+- Alternativ: „Batoni, Pescaglia“ suchen
+- Taxi von Lucca: Radio Taxi Lucca, ca. 30 € (Stand 2024)
+- Busverbindungen vorhanden
+
+📷 FOTOS
+- Es gibt ein gemeinsames Online-Album über die Celebrate App
+- Zugangscode: PJKWNPQE
+
+---
+
+Diese Datei kann bei Bedarf in `/Users/svenfriess/Desktop/borgobatone.de/borgobatone.txt` abgelegt und vom Chatbot verwendet werden.

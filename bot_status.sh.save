@@ -1,0 +1,19 @@
+#!/bin/bash
+# Bot-Status prüfen
+
+if pgrep -fl "signal_bot" >/dev/null; then
+    echo "✅ Bot läuft"
+    pgrep -fl "signal_bot"
+else
+    echo "❌ Bot gestoppt"
+fi
+#!/bin/bash
+# Bot-Status prüfen
+
+if pgrep -fl "signal_bot" >/dev/null; then
+    echo "✅ Bot läuft"
+    pgrep -fl "signal_bot"
+else
+    echo "❌ Bot gestoppt"
+fi
+

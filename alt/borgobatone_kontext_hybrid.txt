@@ -1,0 +1,142 @@
+BORGO BATONE – HYBRID-KONTEXT FÜR CHATBOT (Langfassung, Stand Juni 2025)
+
+Dieses Textfile ist eine kombinierte Version aus ausführlich strukturierten Inhalten, formuliert im Stil des Originaldokuments „Benvenuti – Travelguide and Housekeeping“. Ziel ist es, eine hochwertige Wissensbasis für RAG-Chatbots zu liefern, die vollständige und präzise Antworten ermöglichen.
+
+---
+
+🛒 EINKAUFEN
+
+In S. Martino in Freddana gibt es den Supermarkt Carrefour sowie eine Bäckerei für frisches Brot. Nah am Dorf, unten an der Hauptstraße bei der Tankstelle, befindet sich der kleine Shop „Alimentari Pini“, wo man Brot, Milch, frisches Obst und Gemüse erhält. Die Tochter Veronica spricht Englisch.
+
+Großmärkte wie Esselunga, Coop oder Carrefour sind in Lucca oder Viareggio empfehlenswert. Für biologische Produkte bietet sich der Bioladen NaturaSi (Via Roma 37a, Camaiore LU) an.
+
+Es gibt Wochenmärkte mittwochs und samstags in Lucca sowie samstags im Foro Boario (Monte San Quirico), wo lokales Gemüse und Obst angeboten wird.
+
+---
+
+📶 WLAN / IT
+
+In Villa Barsotti, Casa Giannotti sowie Casa Inglese 1 & 2 steht WLAN zur Verfügung (SSID: Borgo, Passwort: B3estUs3Cabl3). Der zentrale Netzwerkknoten befindet sich im Kellerraum der Villa. An verschiedenen Stellen liegen Netzwerkkabel bereit.
+
+Casa Gabriello verfügt über einen eigenen LTE-Router.
+
+---
+
+🧘 YOGA
+
+Im 2. OG der Villa stehen 15 Yoga-Sets zur Verfügung (Matten, Blöcke, Gurte). Nach Benutzung sollten die Matten mit biologischem Spray gereinigt und vollständig getrocknet werden. Eine freiwillige Spende ist möglich: IBAN DE64 1001 0300 5231 0370 80, Verwendungszweck „YOGA BB“.
+
+---
+
+🍳 GEMEINSCHAFTSKÜCHE
+
+Die Küche in der Villa Barsotti ist die zentrale Gemeinschaftsküche. Sie soll zwischen 23 Uhr und 7 Uhr nicht genutzt werden. Für Einzelpersonen empfiehlt sich, sich mit Kochgruppen abzusprechen.
+
+Im Vorratsschrank befinden sich Produkte wie Senf, Öl, Kaffee, Tee, Zucker und Gewürze. Diese können gemeinschaftlich verwendet und nachgefüllt werden. Die Gemeinschaftskasse (silberne Dose) steht auf dem Fensterbrett.
+
+Bitte lagert Lebensmittel luftdicht (Motten!) und lasst Schranke offen. Kühlschrank: Oben ist das Fach für gemeinsame Produkte. Übriggebliebenes bei Abreise kann dort deponiert werden.
+
+---
+
+🍕 PIZZAOFEN
+
+Der Pizzaofen in Casa Gabriello wird mit einem großen Feuer vorgeheizt (ca. 1 Stunde brennen lassen). Danach Glut zur Seite schieben und Pizza auf der freigewordenen Fläche backen.
+
+Asche (abgekühlt) in den Restmüll. Bitte kein Wasser zum Löschen verwenden!
+
+Mengenempfehlung für 12–14 Personen:
+2,5 kg Mehl, 1 Flasche Passata, 1 Packung Pilze, 12x Mozzarella, 1 Zucchini, Rucola, Oliven etc.
+
+---
+
+♻️ MÜLL
+
+Der Müll muss getrennt werden:
+- Gelbe Säcke: Plastik, Tetrapak, Alu
+- Graue Säcke: Restmüll (kein Papier oder Bio!)
+- Lila Säcke: Windeln, Monatshygiene
+- Kompostsäcke: Biomüll
+- Glas: grüne Tonne
+- Papier: weiße Tonne
+
+Säcke erhält man bei den Personen, die die Müllabholung organisieren. Müllstelle: vor der Villa.
+
+Bei unklarer Gäste-Nachfolge den Müll zur nächsten Müllstation bringen.
+
+---
+
+🧺 WÄSCHE
+
+Jede:r bringt eigene Wäsche (Bettwäsche, Handtücher) mit. Im Notfall kann aus dem Borgo-Fundus geliehen werden.
+
+Waschmaschinen stehen in der Villa und Casa Gabriello zur Verfügung. Zahlung via PayPal QR-Code (8 € / 5 € / 12 € je nach Anreiseart). Bitte nur das bereitgestellte Öko-Waschmittel verwenden.
+
+---
+
+🚿 POOL
+
+Der Pool wird regelmäßig automatisch und manuell gereinigt. Der Poolreiniger hat einen Schlüssel. Vor dem Schwimmen bitte duschen. Toilettennutzung: Eigene Häuser, Casa Giannotti oder Villa Barsotti.
+
+Nach Gewitter ggf. Sicherung in der Villa prüfen. Kleidungspflicht am Pool, FKK nur nach Absprache.
+
+---
+
+🦎 TIERE
+
+Schlangen wie die ungiftige Zornnatter oder auch Vipern können auftreten. Auch Skorpione sind möglich. Bitte keine Panik – Bisse sind selten, bei Viperbiss sofort ins Krankenhaus.
+
+---
+
+🐾 HUNDE
+
+Hunde sind willkommen, aber bitte Rücksicht auf andere Gäste nehmen. Keine Nutzung des Pools durch Hunde, Hinterlassenschaften bitte im Restmüll entsorgen. Anmeldung des Hundes bei Buchung empfohlen.
+
+---
+
+🧯 KAMINE
+
+Nur der Kamin in der Küche der Villa ist freigegeben. Brennholz ist in Casa del Formaggio, beim Ovile und bei der Kapelle gelagert.
+
+---
+
+🌊 WASSER / STROM
+
+Das Wasser stammt aus einer lokalen Bergquelle und ist trinkbar. Stromsicherungen sind je nach Haus individuell. Bitte Fenster bei Wind sichern.
+
+---
+
+🔌 WLAN-STÖRUNG
+
+Fällt der zentrale Knoten im Keller der Villa aus, ist kein WLAN/Internet verfügbar. Hinweis für Gäste: zuerst dort nachsehen.
+
+---
+
+🚗 ANREISE
+
+Adresse: Borgo Batone, Via di Loppeglia, 55064 Pescaglia LU  
+Alternative: „Batoni, Pescaglia“  
+Taxi: Radio Taxi Lucca – ca. 30 €  
+Busverbindung: ab Bahnhof Lucca
+
+---
+
+🔑 SCHLÜSSEL
+
+Schlüssel befinden sich im Kaminzimmer der Villa. Villa-Schlüssel bitte bei Abreise im Tresor beim Ovile ablegen (Code: 4711).
+
+---
+
+📷 FOTOS
+
+Celebrate App für gemeinsames Fotoalbum. Zugangscode: PJKWNPQE
+
+---
+
+🚪 ABREISE
+
+- Zimmer reinigen, Fenster schließen
+- Lebensmittel prüfen & Kühlschrank leeren
+- Müll entsorgen
+- Geliehene Wäsche waschen und aufhängen
+- Gashähne schließen
+- Schlüssel zurückgeben

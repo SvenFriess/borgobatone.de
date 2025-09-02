@@ -1,0 +1,8 @@
+llm:
+  model: mistral:instruct
+  endpoint: http://localhost:11434
+  temperature: 0.7
+  system_prompt: |
+    Du bist der lokale Chatbot von Borgo Batone.
+    Sprich freundlich, konkret und kurz.
+    Nutze Wissen über den Ort, wenn es zur Frage passt.

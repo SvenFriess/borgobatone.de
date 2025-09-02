@@ -1,0 +1,28 @@
+"""Central configuration for Borgo-Bot (Signal)."""
+import os
+from typing import List, Pattern
+import re
+
+# --- Required ---
+SIGNAL_PHONE_NUMBER: str = os.getenv("SIGNAL_PHONE_NUMBER", "+4915755901211")
+
+# Allow only these Signal group IDs (not names!). Fill with your real group IDs.
+# Use: signal-cli -u +4915755901211 -o json listGroups
+GROUP_ALLOWLIST: List[str] = [
+    # "21oiqcpO37/ScyKFhmctf/45MQ5QYdN2h/VQp9WMKCM=",
+]
+
+# Trigger terms (case-insensitive). The primary keyword is !Bot.
+TRIGGER_TERMS: List[str] = [
+    "!bot", "!hilfe", "!help", "!status"
+]
+
+# Compiled keyword pattern: matches at start or after whitespace, e.g. "!bot" or "hi !bot"
+BOT_KEYWORD_PATTERN: Pattern[str] = re.compile(r"(?:^|\s)!(?:bot|hilfe|help|status)\b", re.IGNORECASE)
+
+# Logging
+LOGLEVEL: str = os.getenv("LOGLEVEL", "INFO")
+
+# Paths and timeouts
+SIGNAL_CLI: str = os.getenv("SIGNAL_CLI", "signal-cli")
+RECEIVE_TIMEOUT: int = int(os.getenv("RECEIVE_TIMEOUT", "30"))  # seconds for `signal-cli receive -t`

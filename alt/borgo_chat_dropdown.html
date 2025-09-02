@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Borgo Bot</title>
+</head>
+<body>
+    <h1>Borgo Batone Chatbot</h1>
+
+    <label for="user_input">Deine Frage:</label><br>
+    <textarea id="user_input" rows="4" cols="50"></textarea><br><br>
+
+    <label for="model">Modell auswählen:</label>
+    <select id="model">
+        <option value="granite3.3:2b">granite3.3:2b</option>
+        <option value="gemma:2b">gemma:2b</option>
+        <option value="mistral:instruct">mistral:instruct</option>
+    </select><br><br>
+
+    <button onclick="sendQuery()">Absenden</button>
+
+    <h2>Antwort:</h2>
+    <pre id="response"></pre>
+
+    <script>
+        async function sendQuery() {
+            const input = document.getElementById("user_input").value;
+            const model = document.getElementById("model").value;
+
+            const response = await fetch("/api/generate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    user_input: input,
+                    model: model,
+                    user_id: "frontend-user"
+                })
+            });
+
+            const data = await response.json();
+            document.getElementById("response").textContent = data.response || data.antwort || data.error || "Keine Antwort erhalten.";
+        }
+    </script>
+</body>
+</html>

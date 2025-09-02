@@ -1,0 +1,49 @@
+import subprocess
+import os
+import sys
+import config
+
+def load_context():
+    """Lädt den Borgo-Batone-Kontext aus Datei."""
+    if not os.path.exists(config.CONTEXT_PATH):
+        return ""
+    with open(config.CONTEXT_PATH, "r", encoding="utf-8") as f:
+        text = f.read(config.CONTEXT_CHARS)
+    return text.strip()
+
+def generate_llm_reply(user_prompt: str) -> str:
+    """
+    Baut den kombinierten Prompt (Kontext + Frage) und schickt ihn an Ollama.
+    """
+    context_text = load_context()
+    final_prompt = ""
+
+    if context_text:
+        final_prompt = (
+            f"BORGO BATONE – KONTEKST\n"
+            f"{context_text}\n\n"
+            f"---\n\n"
+            f"Frage: {user_prompt}"
+        )
+    else:
+        final_prompt = user_prompt
+
+    try:
+        # Ruft ollama run auf und übergibt den kombinierten Prompt
+        result = subprocess.run(
+            ["ollama", "run", config.LLM_MODEL],
+            input=final_prompt.encode("utf-8"),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=True
+        )
+        return result.stdout.decode("utf-8").strip()
+    except subprocess.CalledProcessError as e:
+        return f"[LLM-Fehler] {e.stderr.decode('utf-8').strip()}"
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "--prompt":
+        prompt = " ".join(sys.argv[2:])
+        print(generate_llm_reply(prompt))
+    else:
+        print("Verwendung: python local_llm_interface.py --prompt 'Ihre Frage'")

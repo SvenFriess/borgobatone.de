@@ -1,0 +1,143 @@
+BORGO BATONE – KONTEXT FÜR CHATBOT (Stand: Juni 2025)
+
+Dieses Dokument enthält zentrale Informationen für Besucher:innen des Borgo Batone und dient als strukturierte Wissensquelle für den Chatbot. Es basiert auf dem offiziellen „Benvenuti – Travelguide and Housekeeping“ und ersetzt das bisherige borgobatone.txt-File.
+
+---
+
+🏡 ALLGEMEINES
+Borgo Batone ist ein gemeinschaftlich genutzter Sehnsuchtsort in der Toskana. Gemeinschaft, Rücksicht und Eigenverantwortung stehen im Mittelpunkt. Die Onsite-Gruppe auf Signal dient der Koordination vor Ort.
+
+---
+
+🛒 EINKAUFEN
+- Nahversorgung: „Alimentari Pini“ (Brot, Milch, Obst, Gemüse), direkt an der Hauptstraße
+- Supermärkte: Carrefour (S. Martino), Esselunga, Coop (Lucca / Viareggio)
+- Bioladen: NaturaSi, Via Roma 37a, Camaiore LU
+- Wochenmärkte: mittwochs & samstags in Lucca, samstags im Foro Boario (Monte San Quirico)
+
+---
+
+📶 WLAN & NETZWERK
+- WLAN in Villa Barsotti, Casa Giannotti, Casa Inglese 1 & 2
+- SSID: Borgo | Passwort: B3estUs3Cabl3
+- LAN-Zugang via Netzwerkkabel in verschiedenen Räumen
+- Casa Gabriello: separater LTE-Router
+
+---
+
+🧘 YOGA
+- 15 Yoga-Sets (Matten, Blöcke, Gurte) im 2. OG der Villa
+- Reinigung mit biologischem Spray
+- Spende via Klarna möglich: IBAN DE64 1001 0300 5231 0370 80, Stichwort „YOGA BB“
+
+---
+
+🍳 KÜCHE & GEMEINSCHAFT
+- Zentrale Gemeinschaftsküche: Villa Barsotti
+- Bitte keine Nutzung zwischen 23–7 Uhr
+- Gemeinschaftsschrank mit Lebensmitteln (Tee, Öl, Senf, etc.)
+- Kasse für Ausgleich auf dem Fensterbrett
+- Lebensmittel mit Namen beschriften, Schranktüren offen lassen (Motten)
+- Kühlschrank regelmäßig ausräumen & reinigen
+
+---
+
+🍕 PIZZAOFEN
+- Standort: Casa Gabriello
+- Feuer mittig starten → 1h brennen → Glut zur Seite → Pizza backen
+- Asche (abgekühlt) in Restmüll
+- Kein Wasser zum Löschen verwenden!
+- Mengenempfehlung für 12–14 Pers.: 2,5kg Mehl, Passata, 12x Mozzarella, Gemüse
+
+---
+
+♻️ MÜLLTRENNUNG
+- Ab Mai 2025 strenge Vorgaben:
+  - Gelb: Plastik, Tetrapak, Alu
+  - Grau: Restmüll (kein Papier/Bio!)
+  - Lila: Hygieneartikel
+  - Kompost: Biomüll
+  - Glas: Grüne Tonne
+  - Papier: Weiße Tonne
+- Säcke: direkt bei den Abholenden erhältlich
+- Abholstelle: vor der Villa
+- Bei Abreise Müll zur Sammelstelle bringen
+
+---
+
+🛏️ WÄSCHE & WASCHEN
+- Eigene Bettwäsche & Handtücher mitbringen
+- Waschmaschinen in Villa & Casa Gabriello
+- Zahlung via PayPal QR-Code in der Waschküche
+- Nur Oceanwash-Ökowaschmittel verwenden
+
+---
+
+🧯 KAMINE & BRENNHOLZ
+- Nur der Küchenkamin in der Villa ist nutzbar
+- Brennholz: Keller Casa Formaggio, Lager bei der Kapelle, Ovile
+
+---
+
+🚿 WASSER & STROM
+- Trinkwasser aus lokaler Quelle
+- Stromsicherungen: je nach Haus unterschiedlich
+- Fenster bei Wind sichern (Stoffsäcke/Tuch einklemmen)
+
+---
+
+🏊 POOL
+- Reinigung durch Techniker im 2-Wochen-Rhythmus
+- Dusche mit Warmwasser vorhanden
+- Toilette in Giannotti oder Villa Barsotti nutzen
+- Nach Gewitter ggf. Sicherung prüfen
+- FKK nur in Absprache mit anderen
+
+---
+
+🦟 TIERE & SICHERHEIT
+- Schlangen (u.a. Zornnatter, Vipern) & Skorpione möglich
+- Feste Schuhe empfohlen bei Wanderungen
+- Hunde erlaubt – Rücksicht & Leinenpflicht auf Gemeinschaftsflächen
+
+---
+
+🔌 ELEKTROZAUN
+- Hält Wildschweine fern
+- Dauerhaft aktiv lassen
+- Bedienung: Casa l’Ovile
+
+---
+
+🚗 ANREISE
+- Adresse für Google Maps: Borgo Batone, Via di Loppeglia, 55064 Pescaglia LU
+- Alternativ: Batoni, Pescaglia
+- Taxi: Radio Taxi Lucca – ca. 30 € (Stand 2024)
+- Busverbindung vorhanden
+
+---
+
+🔑 SCHLÜSSEL
+- Schlüsselbrett im Kaminzimmer der Villa
+- Schlüsseltresor unter dem Ovile-Dach, Code: 4711
+- Villa-Schlüssel bei Abreise im Tresor hinterlegen
+
+---
+
+📷 FOTOS & APP
+- Celebrate-App mit Album für Bilder und Videos
+- Zugangscode: PJKWNPQE
+
+---
+
+🧹 ABREISE
+- Zimmer/ Haus aufräumen, saugen, Fenster schließen
+- Müll entsorgen, Kühlschrank leeren
+- Geliehene Wäsche: waschen, aufhängen oder mit anderen absprechen
+- Gas kontrollieren, ggf. nachbestellen
+- Schlüssel zurückgeben, Gashähne zudrehen
+
+---
+
+Diese Datei kann als `/Users/svenfriess/Desktop/borgobatone.de/borgobatone.txt` gespeichert werden.
+Sie ist optimiert für Ollama-basierte Chatbot-Modelle.

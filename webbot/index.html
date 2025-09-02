@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borgo Batone – Chat</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-image: url("Borgo-Landscape.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(3px);
+      margin: auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      font-size: 14px;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .chat-input button {
+      padding: 0 1.5rem;
+      border: none;
+      background-color: #914f1f;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .chat-input button:hover {
+      background-color: #7c3f17;
+    }
+
+    .message {
+      margin-bottom: 1rem;
+    }
+
+    .user {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .bot {
+      color: #444;
+    }
+  
+@media only screen and (max-width: 600px) {
+  .chat-container {
+    height: 60vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .chat-input input {
+    font-size: 16px;
+  }
+
+  .chat-input button {
+    font-size: 16px;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="chat-container">
+<div class="chat-messages" id="chat">
+<div class="message bot">👋 Willkommen bei Borgo Batone! Was möchtest du wissen?</div>
+</div>
+<p style="font-size: 0.9em; color: gray;">⏳ Antwort kann bis zu 1 Minute dauern ...</p>
+<div class="chat-input">
+<input id="userInput" placeholder="Deine Nachricht..." type="text"/>
+<button onclick="sendMessage()">Senden</button>
+</div>
+</div>
+<script>
+    async function sendMessage() {
+      const input = document.getElementById('userInput');
+      const message = input.value.trim();
+      if (!message) return;
+
+      const chat = document.getElementById('chat');
+      chat.innerHTML += `<div class="message user">🧑‍💬 ${message}</div>`;
+      input.value = '';
+      input.focus();
+
+      try {
+        const res = await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ user_input: message })
+        });
+
+        const data = await res.json();
+        const reply = data.response || "⚠️ Leider keine Antwort erhalten.";
+        chat.innerHTML += `<div class="message bot">🤖 ${reply}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+      } catch (err) {
+        chat.innerHTML += `<div class="message bot">❌ Fehler beim Abrufen der Antwort.</div>`;
+      }
+    }
+
+    document.getElementById('userInput').addEventListener("keypress", function (e) {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    function preset(text) {
+      document.getElementById("userInput").value = text;
+      sendMessage();
+    }
+  </script>
+
+<div style="padding: 1rem; background: #e6f4ea; font-size: 14px; margin: 1rem auto; border-radius: 8px; width: 90%; max-width: 500px;">
+<strong>📌 Hinweis zur Bedienung:</strong><br/><br/>
+  Gib deine Frage ins Textfeld ein oder wähle unten einen Button aus.
+  Beim Klick auf einen Button wird sofort eine Anfrage gesendet.
+  Bitte ein paar Sekunden auf die Antwort warten.
+</div>
+<div style="padding: 1rem; background: #fff8e1; font-size: 14px; margin: 1rem auto; border-radius: 8px; width: 90%; max-width: 500px;">
+<strong>Beispielfragen:</strong><br/><br/>
+<button onclick="preset('Wo kann ich in der Nähe einkaufen?')">🛒 Einkaufen</button>
+<button onclick="preset('Gibt es WLAN im Borgo?')">📶 WLAN</button>
+<button onclick="preset('Welche Yoga-Ausstattung ist vorhanden?')">🧘 Yoga</button>
+<button onclick="preset('Was sollte ich bei der Abreise beachten?')">🚪 Abreise</button>
+<button onclick="preset('Wie funktioniert die Mülltrennung im Borgo?')">♻️ Müll</button>
+<button onclick="preset('Gibt es gemeinschaftliche Lebensmittel?')">🥫 Vorrat</button>
+<button onclick="preset('Wie benutze ich den Pizzaofen in Casa Gabriello?')">🍕 Pizzaofen</button>
+<button onclick="preset('Was mache ich, wenn ich ein Tier im Haus finde?')">🐞 Tiere</button>
+<button onclick="preset('Gibt es voll ausgestattete Küchen im Borgo?')">🍳 Küche</button>
+<button onclick="preset('Was kann ich zur Gemeinschaft beitragen?')">🌱 Beitrag</button>
+<button onclick="preset('Welche Häuser sind aktuell bewohnbar?')">🏠 Häuser</button>
+<button onclick="preset('Welche Wanderungen gibt es rund um das Borgo?')">🥾 Wandern</button>
+<button onclick="preset('Was sollte ich für meinen Aufenthalt mitbringen?')">🎒 Packliste</button>
+<button onclick="preset('Gibt es eine Waschmaschine im Borgo?')">🧺 Waschmaschine</button>
+<button onclick="preset('Welche Ausflugsziele gibt es in der Umgebung?')">🚗 Ausflüge</button>
+</div>
+</body>
+</html>

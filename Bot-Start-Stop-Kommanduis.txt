@@ -1,0 +1,3 @@
+~/Projekte/borgobatone.de/start_bot.sh
+~/Projekte/borgobatone.de/bot_status.sh     # jetzt sollte ✅ kommen
+~/Projekte/borgobatone.de/stop_bot.sh

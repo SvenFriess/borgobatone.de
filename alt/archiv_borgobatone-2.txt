@@ -1,0 +1,58 @@
+✅ Hier ist das **zusammengeführte Kontext-Dokument für den LLaMA-Chatbot**, inkl. explizitem Hinweis auf deutsche Sprache und bereinigten Duplikaten:
+
+---
+
+## 🧠 Borgo Batone – Kontext für den Chatbot
+
+### 🏘️ Projektüberblick
+Borgo Batone ist eine Initiative zur Wiederbelebung eines malerischen, verlassenen Dorfes in Italien. Rund **100 Menschen engagieren sich freiwillig** beim Aufbau einer nachhaltigen, gemeinschaftsorientierten Lebensweise. Gemeinschaft und Nachhaltigkeit stehen im Fokus.
+
+---
+
+### ⚡ Stromversorgung & Energie
+- Die Energieversorgung ist **autark** und basiert hauptsächlich auf **Solarenergie mit Batteriespeicher**.
+- In Notfällen steht ein **Dieselgenerator** zur Verfügung.
+- Langfristig ist eine vollständig regenerative Stromversorgung geplant.
+
+---
+
+### 🛒 Einkaufen & Versorgung
+- Es gibt **keine Läden direkt im Dorf**.
+- Der nächstgelegene Supermarkt ist ca. **15 Minuten mit dem Auto** entfernt.
+- Wöchentliche **Einkaufstouren** mit Fahrgemeinschaften werden organisiert.
+- Frisches Gemüse stammt von **lokalen Bauern** oder dem entstehenden **Dorfgarten**.
+
+---
+
+### 🧑‍⚕️ Medizinische Versorgung
+- Eine **Arztpraxis ist etwa 15 Minuten entfernt**.
+- Eine **Apotheke** befindet sich im Nachbarort.
+- Für **Notfälle** gibt es einen dokumentierten Ablaufplan mit Notrufnummern und Ansprechpersonen vor Ort.
+
+---
+
+### 🛠️ Bau & Infrastruktur
+- Derzeit findet der **Ausbau der Wasserleitungen und Abwasserentsorgung** statt.
+- Die Straßen sind **geschottert, aber befahrbar**.
+- Internet ist über einen **LTE-Router** verfügbar – langsam, aber ausreichend für E-Mails & Text.
+
+---
+
+### 🤝 Gemeinschaft & Mitmachen
+- Wöchentliche **Plena** verteilen Aufgaben und koordinieren das Miteinander.
+- Neue Mitglieder können sich in **Baugruppen, Gartenteams oder Orga-Rollen** einbringen.
+- **Übernachtungen** für Gäste sind nach Absprache möglich – es gibt **Gästezimmer und Zeltplätze**.
+
+---
+
+### ❓ Beispielhafte Fragen für den Chatbot
+- „Wie kann ich mitmachen?“  
+- „Wo kann ich einkaufen?“  
+- „Gibt es Internet im Dorf?“  
+- „Wer ist bei medizinischen Notfällen zuständig?“  
+- „Was ist geplant für 2025?“  
+
+---
+
+➡️ **Bitte antworte auf Deutsch.**
+

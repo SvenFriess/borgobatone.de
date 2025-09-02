@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Borgo Batone Chat</title>
+  <style>
+    #chat-toggle-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: transparent;
+      border: none;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    #chat-toggle-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+    }
+
+    #chat-toggle-btn img:hover {
+      transform: scale(1.05);
+    }
+
+    #chat-popup {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      display: none;
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    #chat-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #e6b07c; /* Warmer mediterraner Farbton */
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <button id="chat-toggle-btn">
+    <img src="/static/B3-Icon-144x144.png" alt="Chat starten">
+  </button>
+
+  <div id="chat-popup">
+    <iframe id="chat-frame" src="/chatwindow"></iframe>
+  </div>
+
+  <script>
+    const chatBtn = document.getElementById('chat-toggle-btn');
+    const chatPopup = document.getElementById('chat-popup');
+
+    chatBtn.addEventListener('click', () => {
+      chatPopup.style.display = (chatPopup.style.display === 'block') ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

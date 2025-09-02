@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Borgo Batone Chat</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-image: url("/static/Borgo-Landscape.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+  
+    .chat-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1rem;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 350px;
+      border-radius: 1rem;
+    }
+  
+    #chat {
+      max-height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      background: #fff;
+    }
+  
+    .message { margin-bottom: 0.5rem; }
+    .user { font-weight: bold; }
+    .bot { font-style: italic; color: #444; }
+  
+    #prompt { width: 70%; padding: 0.5rem; }
+    button { padding: 0.5rem 1rem; }
+  </style>
+  
+</head>
+<body>
+  <h3>💬 Frag mich was zu Borgo Batone</h3>
+  <div id="chat"></div>
+  <input type="text" id="prompt" placeholder="Deine Frage…" />
+  <button onclick="sendMessage()">Senden</button>
+
+  <script>
+    async function sendMessage() {
+      console.log('[Borgo Batone Chat] Nachricht wird gesendet …');
+      const promptInput = document.getElementById('prompt');
+      const chat = document.getElementById('chat');
+      const message = promptInput.value.trim();
+      if (!message) return;
+
+      const userMsg = document.createElement('div');
+      userMsg.className = 'message user';
+      userMsg.textContent = message;
+      chat.appendChild(userMsg);
+      promptInput.value = '';
+      scrollToBottom();
+
+      const thinking = document.createElement('div');
+      thinking.className = 'message bot';
+      thinking.textContent = '🕰️ Einen Moment, ich durchsuche das Borgo-Wissen… 🔍';
+      chat.appendChild(thinking);
+      scrollToBottom();
+
+      try {
+        const res = await fetch('/api/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user_input: message })
+        });
+        const data = await res.json();
+        console.log('[Borgo Batone Chat] Serverantwort:', data);
+
+        setTimeout(() => {
+          thinking.textContent = data.response || data.error || 'Fehler beim Antworten.';
+          scrollToBottom();
+        }, 1000);
+      } catch (err) {
+        thinking.textContent = 'Fehler beim Laden der Antwort.';
+        console.error('[Borgo Batone Chat] Fehler beim Laden:', err);
+      }
+    }
+
+    function scrollToBottom() {
+      const chat = document.getElementById('chat');
+      chat.scrollTo({ top: chat.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

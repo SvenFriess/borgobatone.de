@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>🧪 Borgo Batone – Testportal</title>
+<style>
+  :root{
+    --bg:#0d1117; --ink:#e6edf3; --muted:#9aa6b2; --line:#21262d;
+    --card:#161b22; --badge:#22262e; --accent:#8be9fd;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,Segoe UI,Inter,Roboto,sans-serif}
+  header{position:sticky;top:0;z-index:20;padding:14px 16px 12px;border-bottom:1px solid var(--line);
+         background:linear-gradient(180deg,#0d1117 0,#0f1420 100%)}
+  h1{margin:0 0 6px;font-size:1.25rem}
+  .lead{margin:0;color:var(--muted);font-size:.95rem}
+  .wrap{max-width:920px;margin:0 auto;padding:0 12px}
+  .quicknav{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .chip{font-size:.9rem;padding:10px 12px;border-radius:12px;background:#0f1722;border:1px solid #233042;text-decoration:none;color:var(--ink)}
+  .chip:active{transform:scale(.98)}
+  main{padding:12px 0 72px}
+  h2{margin:18px 0 10px;font-size:1.05rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .row{display:flex;gap:10px;align-items:center}
+  .avatar{width:40px;height:40px;border-radius:50%;background:#2b3240;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+  .name{font-weight:600;font-size:.98rem}
+  .role{font-size:.8rem;color:var(--muted)}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .badge{font-size:.75rem;background:var(--badge);border:1px solid #30363d;border-radius:999px;padding:4px 8px}
+  code,kbd{background:#0b1220;border:1px solid #203047;border-radius:6px;padding:3px 6px;font-size:.9rem}
+  ul{margin:8px 0 0 18px}
+  .checklist li{margin:6px 0}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  @media (max-width: 420px){
+    .grid{grid-template-columns:1fr}
+    header{padding:12px 12px}
+    .chip{flex:1 1 calc(50% - 8px); text-align:center}
+    .avatar{width:36px;height:36px}
+    .card{padding:12px}
+    body{font-size:15.5px}
+  }
+  .safe-bottom{height:16px;padding-bottom:env(safe-area-inset-bottom)}
+  footer{position:sticky;bottom:0;background:#0f1420;border-top:1px solid var(--line);padding:10px 16px;color:var(--muted);text-align:center}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>🧪 Borgo Batone – Testportal</h1>
+    <p class="lead">Lokaler, DSGVO-freundlicher Chatbot. Diese Seite führt durch Tests & dokumentiert, was der Bot derzeit kann.</p>
+    <nav class="quicknav">
+      <a class="chip" href="#users">Nutzer</a>
+      <a class="chip" href="#model">Modell</a>
+      <a class="chip" href="#kb">Kontext</a>
+      <a class="chip" href="#tests">Tests</a>
+      <a class="chip" href="#samples">Beispielfragen</a>
+      <a class="chip" href="#feedback">Feedback</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 👥 Aktive Nutzer & Rollen -->
+  <section id="users">
+    <h2>👥 Aktive Nutzer & Rollen</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="row"><div class="avatar">SF</div><div><div class="name">SvenF</div><div class="role">Admin • Product Owner</div></div></div>
+        <div class="badges"><span class="badge">Signal-Admin</span><span class="badge">Review</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">BB</div><div><div class="name">Borgi B3</div><div class="role">Bot • Gruppen-Admin</div></div></div>
+        <div class="badges"><span class="badge">LLM: Mistral 7B</span><span class="badge">Signal-CLI</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">SF</div><div><div class="name">Sven Friess</div><div class="role">Tester</div></div></div>
+        <div class="badges"><span class="badge">Feedback</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">KF</div><div><div class="name">Katja Friess (PRIVAT)</div><div class="role">Tester</div></div></div>
+        <div class="badges"><span class="badge">UX-Feedback</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">??</div><div><div class="name">Carola</div><div class="role">Tester</div></div></div>
+        <div class="badges"><span class="badge">noch nicht aktiv</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">??</div><div><div class="name">Mirko</div><div class="role">Tester</div></div></div>
+        <div class="badges"><span class="badge">noch nicht aktiv</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">??</div><div><div class="name">Andreas</div><div class="role">Tester</div></div></div>
+        <div class="badges"><span class="badge">noch nicht aktiv</span></div>
+      </div>
+
+      <div class="card">
+        <div class="row"><div class="avatar">??</div><div><div class="name">Alex</div><div class="role">Tester</div></div></div>
+        <div class="badges"><span class="badge">noch nicht aktiv</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧠 Modell & Laufzeit -->
+  <section id="model">
+    <h2>🧠 Modell & Laufzeit</h2>
+    <div class="card">
+      <p><strong>Modell:</strong> Mistral 7B (lokal, über Ollama) – geeignet für schnelle, deutschsprachige Antworten ohne Cloud.</p>
+      <p class="badge" style="display:inline-block">🔌 Signal-Integration: Gruppenchat „Borgo-Bot“, der Bot antwortet nur auf Nachrichten mit Triggerwort.</p>
+      <p style="margin-top:8px"><strong>Trigger in der Gruppe:</strong> <kbd>!Bot &lt;Frage&gt;</kbd> <span class="mono">(z. B. !Bot Wo kann ich einkaufen?)</span></p>
+    </div>
+  </section>
+
+  <!-- 📚 Hinterlegter Kontext -->
+  <section id="kb">
+    <h2>📚 Hinterlegter Kontext (Knowledge Base)</h2>
+    <div class="card">
+      <p>Der Bot nutzt eine lokale Textbasis:</p>
+      <p class="mono" style="word-break:break-all">/Users/svenfriess/Projekte/borgobatone.de/borgobatone.txt</p>
+      <p>Enthaltene Themen (Auszug):</p>
+      <ul>
+        <li>Öffnungszeiten & Angebote vor Ort (Supermarkt, Gastronomie, Märkte)</li>
+        <li>Notfallinfos (112, Ärzt:innen/Adressen, schnelle Hinweise)</li>
+        <li>Allgemeine Hinweise zum Dorfprojekt Borgo Batone</li>
+        <li>Beispielantworten & Formulierungsleitfäden</li>
+      </ul>
+      <p style="color:var(--muted)">💡 Stellt konkrete Fragen mit Bezug zu diesen Punkten, damit der Kontext greift.</p>
+    </div>
+  </section>
+
+  <!-- 🧭 Tests -->
+  <section id="tests">
+    <h2>🧭 Was genau getestet werden soll</h2>
+    <div class="grid">
+      <div class="card"><strong>1) Trigger & Routing</strong><ul class="checklist"><li>Antwortet nur auf <code>!Bot</code>-Nachrichten?</li><li>Ignoriert alles ohne Trigger?</li></ul></div>
+      <div class="card"><strong>2) Kontexttreue</strong><ul class="checklist"><li>Fragen zu Öffnungszeiten, Notfällen, Vor-Ort-Tipps.</li><li>Antworten nur aus <code>borgobatone.txt</code>?</li></ul></div>
+      <div class="card"><strong>3) Antwortqualität</strong><ul class="checklist"><li>Klarheit, Kürze, Korrektheit.</li><li>Ton: freundlich, sachlich, hilfreich.</li></ul></div>
+      <div class="card"><strong>4) Robustheit</strong><ul class="checklist"><li>Umlaute/Emoji/Schreibfehler im Prompt.</li><li>Falsche Annahmen → Rückfrage?</li></ul></div>
+      <div class="card"><strong>5) Performance</strong><ul class="checklist"><li>Antwortzeit &lt; 3–5 s angestrebt.</li><li>Konstanz bei mehreren Anfragen.</li></ul></div>
+      <div class="card"><strong>6) Gruppen-Admin-Funktionen</strong><ul class="checklist"><li>Kann Einladungen/Links posten?</li><li>Keine unerwünschten Änderungen.</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 📝 Gute Testfragen -->
+  <section id="samples">
+    <h2>📝 Gute Testfragen (Beispiele)</h2>
+    <div class="card">
+      <ul>
+        <li><code>!Bot Wo kann ich einkaufen?</code></li>
+        <li><code>!Bot Was tun bei einem medizinischen Notfall?</code></li>
+        <li><code>!Bot Wo gibt es regionale Produkte?</code></li>
+        <li><code>!Bot Nenne mir die wichtigsten Notfallnummern.</code></li>
+      </ul>
+      <p style="color:var(--muted)">Variationen & Rechtschreibfehler testen für Robustheit.</p>
+    </div>
+  </section>
+
+  <!-- 📣 Feedback -->
+  <section id="feedback">
+    <h2>📣 Feedback & Issues</h2>
+    <div class="card">
+      <p>Notiere: <strong>Prompt</strong> → <strong>Antwort</strong> → <strong>Bewertung</strong>. Gern mit Screenshot.</p>
+      <p><strong>Technik-Check:</strong></p>
+      <ul>
+        <li>Trigger <code>!Bot</code> genutzt?</li>
+        <li>Laufen <code>signal-cli receive</code> & Bot-Skript?</li>
+        <li>Antwortzeit &gt; 10 s? → Log prüfen.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Build: lokal • DSGVO-konform • keine Cloud. – © Borgo Batone
+  <div class="safe-bottom"></div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+## Borgo Batone – Chatbot Kontext (für RAG oder statisches Prompting)
+
+### 🏘️ Projektüberblick
+Borgo Batone ist eine Initiative zur Wiederbelebung eines verlassenen Dorfes in Italien. Rund 100 Mitglieder engagieren sich freiwillig beim Wiederaufbau, der Organisation von Gemeinschaftsleben und dem Aufbau einer nachhaltigen Infrastruktur.
+
+### ⚡ Stromversorgung & Energie
+- Der Strom wird aktuell über eine Solaranlage mit Batteriespeicher erzeugt.
+- In Notfällen steht ein Dieselgenerator bereit.
+- Langfristig wird auf autarke, regenerative Energieversorgung gesetzt.
+
+### 🛒 Einkaufen & Versorgung
+- Der nächstgelegene Supermarkt ist ca. 15 Min. mit dem Auto entfernt (in [nächstgelegene Stadt]).
+- Einmal pro Woche gibt es eine gemeinsame Einkaufstour, bei der Fahrgemeinschaften gebildet werden.
+- Frisches Gemüse kommt oft von lokalen Bauern oder dem entstehenden Dorfgarten.
+
+### 🧑‍⚕️ Medizinische Versorgung
+- Die nächste Apotheke ist im Nachbarort.
+- Allgemeinärzt:innen gibt es in [Ort], ca. 20 Minuten entfernt.
+- Für Notfälle ist ein klarer Ablaufplan dokumentiert (inkl. Notrufnummern und Kontaktpersonen im Dorf).
+
+### 🛠️ Bau & Infrastruktur
+- Aktuell läuft der Ausbau der Wasserleitungen und Abwasserentsorgung.
+- Die Straßen sind geschottert, aber befahrbar.
+- Internet ist über einen LTE-Router verfügbar (langsames Netz, aber ausreichend für E-Mails & Text).
+
+### 🤝 Gemeinschaft & Mitmachen
+- Es gibt wöchentliche Plena, in denen Aufgaben verteilt werden.
+- Neue Mitglieder können sich in Baugruppen, Gartenteams oder Orga-Rollen einbringen.
+- Übernachtungen sind nach Absprache möglich – Gästezimmer & Zeltplätze sind vorhanden.
+
+### ❓ Beispielhafte Fragen für den Chatbot
+- „Wie kann ich mitmachen?“  
+- „Wo kann ich einkaufen?“  
+- „Gibt es Internet im Dorf?“  
+- „Wer ist bei medizinischen Notfällen zuständig?“  
+- „Was ist geplant für 2025?“  
