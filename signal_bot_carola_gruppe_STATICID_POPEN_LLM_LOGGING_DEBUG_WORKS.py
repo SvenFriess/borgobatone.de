@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# =======================
+# Imports
+# =======================
 import os
 import re
 import json
@@ -8,21 +11,75 @@ import time
 import shlex
 import logging
 import subprocess
+import hashlib
+import traceback
 from pathlib import Path
 from typing import Iterable, Iterator, Optional, Tuple
 
-# ========== Konfiguration ==========
+# =======================
+# Kontext-Loader mit Hot-Reload
+# =======================
+# WICHTIG: CONTEXT_FILE als Path, damit .exists()/.read_text() etc. überall funktionieren
+CONTEXT_FILE = Path(os.getenv(
+    "CONTEXT_FILE",
+    "/Users/svenfriess/Projekte/borgobatone.de/borgobatone.txt"
+))
+
+_CTX_CACHE = ""
+_CTX_MTIME: Optional[float] = None
+
+def load_context(force: bool = False) -> str:
+    """Lädt die Kontextdatei mit Hot-Reload und gibt den Text zurück."""
+    global _CTX_CACHE, _CTX_MTIME
+    try:
+        if not CONTEXT_FILE.exists():
+            print(f"[CTX][WARN] Kontextdatei nicht gefunden: {CONTEXT_FILE}")
+            _CTX_CACHE = ""
+            _CTX_MTIME = None
+            return _CTX_CACHE
+
+        mtime = CONTEXT_FILE.stat().st_mtime
+        if force or _CTX_MTIME is None or mtime != _CTX_MTIME:
+            _CTX_CACHE = CONTEXT_FILE.read_text(encoding="utf-8", errors="ignore")
+            _CTX_MTIME = mtime
+            sha1 = hashlib.sha1(_CTX_CACHE.encode("utf-8")).hexdigest()[:8]
+            print(f"[CTX] Loaded {CONTEXT_FILE} len={len(_CTX_CACHE)} sha1={sha1}")
+    except Exception as e:
+        print("[CTX][ERROR]", e)
+        traceback.print_exc()
+        _CTX_CACHE = ""
+    return _CTX_CACHE
+
+# initial laden
+load_context(force=True)
+
+def build_prompt(user_input: str) -> str:
+    """Erzeugt den LLM-Prompt inkl. aktuellem (Hot-Reload) Kontext + Debug-Vorschau."""
+    ctx = load_context(False)  # Hot-Reload on change
+    prompt = (
+        "### Borgo-Batone Kontext ###\n" + ctx +
+        "\n### Ende Kontext ###\n" +
+        f"User: {user_input}\nAssistant:"
+    )
+    preview = prompt[:300] + (f"\n...[{len(prompt)-300} chars more]" if len(prompt) > 300 else "")
+    print("[PROMPT][DEBUG]\n", preview)
+    return prompt
+
+# =======================
+# Konfiguration
+# =======================
 BOT_NUMBER = os.environ.get("BOT_NUMBER", "+4915755901211").strip()
 SIGNAL_CLI = os.environ.get("SIGNAL_CLI", "signal-cli").strip()
-GROUP_ID_STATIC = os.environ.get("GROUP_ID", "").strip()  # optional: feste Zielgruppe (Base64-ID)
-RECEIVE_TIMEOUT = int(os.environ.get("RECEIVE_TIMEOUT", "120"))  # Sekunden
-USE_JSON = os.environ.get("USE_JSON", "1") == "1"  # JSON-Receiver standardmäßig an
+GROUP_ID_STATIC = os.environ.get("GROUP_ID", "").strip()        # optional: feste Zielgruppe (Base64-ID)
+RECEIVE_TIMEOUT = int(os.environ.get("RECEIVE_TIMEOUT", "120")) # Sekunden
+USE_JSON = os.environ.get("USE_JSON", "1") == "1"               # JSON-Receiver standardmäßig an
 
 BASE_DIR = Path(os.environ.get("BOT_BASE", str(Path.home() / "Projekte" / "borgobatone.de")))
 LOG_PATH = BASE_DIR / "bot.log"
-CONTEXT_FILE = "/Users/svenfriess/Projekte/borgobatone.de/borgobatone.txt"
 
-# ========== Logging nur in Datei (kein Doppel-Stream) ==========
+# =======================
+# Logging (nur Datei, keine Doppel-Handler)
+# =======================
 for h in logging.root.handlers[:]:
     logging.root.removeHandler(h)
 logging.basicConfig(
@@ -31,23 +88,9 @@ logging.basicConfig(
     handlers=[logging.FileHandler(LOG_PATH, encoding="utf-8")],
 )
 
-# ========== Kontext laden ==========
-def load_context() -> str:
-    try:
-        if CONTEXT_FILE.exists():
-            text = CONTEXT_FILE.read_text(encoding="utf-8", errors="ignore")
-            logging.info(f"📄 Kontextdatei {CONTEXT_FILE.name} geladen ({len(text)} Zeichen)")
-            return text
-        else:
-            logging.warning(f"⚠️ Kontextdatei {CONTEXT_FILE} nicht gefunden – fahre ohne Zusatzkontext")
-            return ""
-    except Exception as e:
-        logging.exception(f"Fehler beim Laden von {CONTEXT_FILE}: {e}")
-        return ""
-
-CONTEXT_TEXT = load_context()
-
-# ========== LLM-Integration (optional) ==========
+# =======================
+# LLM-Integration (optional)
+# =======================
 def llm_answer(question: str, context: str) -> str:
     """
     Versucht, ein lokales LLM zu nutzen (falls Modul vorhanden).
@@ -77,7 +120,9 @@ def llm_answer(question: str, context: str) -> str:
     snippet = "\n".join(hit_lines[:6])
     return f"📚 Aus dem lokalen Kontext:\n{snippet}"
 
-# ========== Utilities ==========
+# =======================
+# Utilities / Parsing
+# =======================
 CMD_TRIGGER = re.compile(r"^\s*!bot\b", re.IGNORECASE)
 WHITESPACE = re.compile(r"\s+")
 
@@ -124,14 +169,16 @@ def build_answer(cmd: str, rest: str) -> str:
         return ("ℹ️ **Borgo-Bot Befehle:** `!bot hallo`, `!bot einkaufen`, `!bot status`.\n"
                 "Frag sonst frei mit `!bot <Frage>` – ich nutze dann lokalen Kontext (`borgobatone.txt`).")
 
-    # 3) Freier Prompt → LLM (mit Kontext)
+    # 3) Freier Prompt → LLM (mit Hot-Reload-Kontext)
     question = normalize_text(f"{cmd} {rest}".strip())
     if not question:
         return ("ℹ️ **Unklare Eingabe.** Beispiele: `!bot hallo`, `!bot einkaufen`, "
                 "`!bot Wo kann ich Brot kaufen?`")
-    return llm_answer(question, CONTEXT_TEXT)
+    return llm_answer(question, load_context(False))  # <— Hot-Reload hier genutzt
 
-# ========== signal-cli Receive/Send ==========
+# =======================
+# signal-cli Receive/Send
+# =======================
 def run_receive() -> Iterator[Tuple[str, str]]:
     """
     Iterator liefert (group_id, message_text) für eingehende Nachrichten.
@@ -174,7 +221,6 @@ def run_receive() -> Iterator[Tuple[str, str]]:
                 yield gid, text
             else:
                 # Textparser als Fallback (nicht empfohlen)
-                # Sehr grob – nur für den Notfall
                 if "dataMessage" not in line:
                     continue
                 # Keine saubere Extraktion möglich → ignorieren
@@ -203,7 +249,9 @@ def send_group_message(group_id: str, text: str) -> None:
         except subprocess.CalledProcessError as e:
             logging.error(f"Sende-Fehler: {e.stderr or e.stdout}")
 
-# ========== Hauptloop ==========
+# =======================
+# Hauptloop
+# =======================
 def main() -> None:
     logging.info("🚀 Bot gestartet")
     logging.info("🤖 Bot läuft und lauscht ...")
