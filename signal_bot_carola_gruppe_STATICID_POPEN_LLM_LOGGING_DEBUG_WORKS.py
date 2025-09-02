@@ -257,38 +257,142 @@ def command_ctx_reload() -> str:
     m = ctx_meta()
     return f"🔁 Kontext neu geladen (len={m['len']}, sha1={m['sha1']})."
 
+
+# === Fixe Antworten (ohne LLM) ===
+# Inhalte mit TODO bitte durch echte Daten aus borgobatone.txt/Benvenuti ergänzen.
+FIXED_RESPONSES: dict[str, str] = {
+    # 👋 Begrüßung & Status
+    "ping": "✅ Bot läuft.",
+    "hallo": "👋 Hallo! Ich bin da.",
+    "hello": "👋 Hallo! Ich bin da.",
+    "hi": "👋 Hallo! Ich bin da.",
+    "status": "✅ Bot läuft. Sende `!bot hilfe` für eine Übersicht.",
+
+    # 🏠 Haus & Aufenthalt
+    "adresse": "🏠 **Adresse:** TODO: Straße, Hausnummer, Ort, Postleitzahl.",
+    "checkliste": (
+        "📋 **Abreise-Checkliste**\n"
+        "- Fenster schließen\n"
+        "- Müll entsorgen\n"
+        "- Kühlschrank leeren\n"
+        "- Schlüssel zurücklegen"
+    ),
+    "haustiere": "🐾 **Haustiere** – TODO: Regeln für Hunde/Katzen im Haus & Garten.",
+    "haustech": (
+        "🔌 **Haustechnik**\n"
+        "- Waschmaschine: TODO\n"
+        "- Geschirrspüler: TODO\n"
+        "- Heizung/Warmwasser: TODO"
+    ),
+    "grill": "🍖 **Grill/Pizzaofen** – TODO: Bedienhinweise & Reinigung.",
+
+    # 🕑 Zeiten & Regeln
+    "anreise": "🕑 **Check-in** – TODO: ab xx Uhr.",
+    "abreise": "🕛 **Check-out** – TODO: bis xx Uhr.",
+    "ruhezeiten": "🤫 **Ruhezeiten** – TODO: z. B. 22–7 Uhr draußen leise sein.",
+    "müll": (
+        "🗑️ **Mülltrennung** – TODO: Restmüll, Plastik, Papier.\n"
+        "📅 Abholungstage: TODO"
+    ),
+
+    # 🌐 Kommunikation & Versorgung
+    "wlan": (
+        "📶 **WLAN**\n"
+        "- Name (SSID): TODO-SSID\n"
+        "- Passwort: TODO-PASS\n"
+        "Tipp: Router ggf. neu starten bei Problemen."
+    ),
+    "wifi": "Alias von *wlan*.",
+    "strom": "⚡ **Strom** – Sicherungskasten/FI-Schalter: TODO.",
+    "wasser": "🚰 **Wasser** – Hauptabsperrhahn: TODO.",
+    "gas": "🔥 **Gas** – Info zu Herd/Heizung: TODO.",
+
+    # 🚑 Gesundheit & Notfall
+    "notfall": (
+        "🚨 **Notfallnummern**\n"
+        "- Europaweiter Notruf: 112\n"
+        "- Polizei: 113 (IT)\n"
+        "- Ambulanza: 118\n"
+        "- Feuerwehr: 115\n"
+        "Adresse parat halten!"
+    ),
+    "arzt": "👩‍⚕️ **Nächster Arzt:** TODO Name, Adresse, Telefon.",
+    "apotheke": "💊 **Apotheke:** TODO Name, Adresse, Öffnungszeiten.",
+    "krankenhaus": "🏥 **Krankenhaus:** TODO Name, Adresse, Notaufnahme.",
+
+    # 🍴 Versorgung & Tipps
+    "einkaufen": (
+        "🛒 **Einkaufen – kurz & knackig**\n"
+        "- **S. Martino in Freddana:** Carrefour & Bäckerei.\n"
+        "- Hauptstraße: „Alimentari Pini“ (Brot, Milch, Obst/Gemüse).\n"
+    ),
+    "einkauf": "Alias von *einkaufen*.",
+    "supermarkt": "🛍️ **Supermarkt:** TODO Öffnungszeiten.",
+    "bäckerei": "🥖 **Bäckerei:** TODO Öffnungszeiten.",
+    "pizzeria": "🍕 **Pizzeria:** TODO Restaurantempfehlung.",
+    "märkte": "🧺 **Wochenmärkte:** TODO Orte & Zeiten.",
+
+    # 🚗 Mobilität
+    "parken": "🅿️ **Parken:** TODO Stellplätze/Hinweise.",
+    "tankstelle": "⛽ **Tankstelle:** TODO Nächste Tankstelle mit Adresse.",
+    "bus": "🚌 **Bus:** TODO nächste Haltestelle & Linie.",
+
+    # 🌳 Umgebung & Ausflüge
+    "strand": "🏖️ **Nächster Strand:** TODO Name, Entfernung.",
+    "sehenswürdigkeiten": "🏛️ **Sehenswürdigkeiten:** TODO Top-3-Tipps.",
+    "wandern": "🥾 **Wandern:** TODO Startpunkte & Routen.",
+
+    # 🍕 Pizzaofen (Haus-spezifisch)
+    "pizza": "🍕 Pizza-Info folgt vor Ort – frag gern nach dem Pizzaofen-Setup.",
+
+    # ℹ️ Hilfe
+    "hilfe": "ℹ️ **Borgo-Bot** – Sende `!bot <Thema>`. Beispiele: `!bot wlan`, `!bot notfall`, `!bot einkaufen`."
+}
+
+FIXED_ALIASES: dict[str, str] = {
+    "wifi": "wlan",
+    "einkauf": "einkaufen",
+    "?": "hilfe",
+}
+
+def fixed_help_text() -> str:
+    """Hilfe baut sich dynamisch aus FIXED_RESPONSES auf."""
+    keys = sorted(set(list(FIXED_RESPONSES.keys()) + list(FIXED_ALIASES.keys())))
+    primaries = [k for k in keys if FIXED_ALIASES.get(k, k) == k]
+    cmds = ", ".join(f"`{k}`" for k in primaries)
+    return (
+        "ℹ️ **Borgo-Bot Befehle (fix):** "
+        + cmds +
+        ".\nFrag sonst frei mit `!bot <Frage>` – ich nutze dann den Kontext (`borgobatone.txt`)."
+    )
+
+def try_fixed_response(cmd: str) -> str | None:
+    """Liefert eine feste Antwort, falls cmd bekannt ist (inkl. Alias-Auflösung)."""
+    key = FIXED_ALIASES.get(cmd, cmd)
+    if key in FIXED_RESPONSES:
+        return FIXED_RESPONSES[key]
+    return None
+
 def build_answer(cmd: str, rest: str) -> str:
-    # 1) Harte, sofortige Antworten (synchron, ohne LLM)
-    if cmd in ("hallo", "hello", "hi"):
-        return "👋 Hallo! Ich bin da."
-    if cmd in ("status",):
-        return "✅ Bot läuft. Sende `!bot hallo`, `!bot einkaufen`, oder frage frei mit `!bot <Frage>`."
-    if cmd in ("einkauf", "einkaufen"):
-        return (
-            "🛒 **Einkaufen – kurz & knackig**\n"
-            "- **S. Martino in Freddana:** Carrefour & Bäckerei.\n"
-            "- Unten an der Hauptstraße: „Alimentari Pini“ (Brot, Milch, Obst/Gemüse).\n"
-        )
-    if cmd in ("pizza",):
-        return "🍕 Pizza-Info folgt vor Ort – frag gern nach dem Pizzaofen-Setup."
-    if cmd in ("ctx-info", "ctxinfo"):
-        return command_ctx_info()
-    if cmd in ("ctx-reload", "ctxreload"):
-        return command_ctx_reload()
+    # 0) Aliasse normalisieren
+    if cmd in FIXED_ALIASES:
+        cmd = FIXED_ALIASES[cmd]
 
-    # 2) „help“ / unbekannt → kurzes, nicht-aufgeblähtes Fallback
-    if cmd in ("help", "hilfe", "?", ""):
-        return ("ℹ️ **Borgo-Bot Befehle:** `!bot hallo`, `!bot einkaufen`, `!bot status`, "
-                "`!bot ctx-info`, `!bot ctx-reload`.\n"
-                "Frag sonst frei mit `!bot <Frage>` – ich nutze dann lokalen Kontext (`borgobatone.txt`).")
+    # 1) Harte, sofortige Antworten (ohne LLM)
+    fixed = try_fixed_response(cmd)
+    if fixed is not None:
+        return fixed
 
-    # 3) Freier Prompt → LLM (mit Hot-Reload-Kontext & Modus)
+    # 2) Hilfe / unbekannt → kurzes, dynamisches Fallback
+    if cmd in ("help", "hilfe", "", "?"):
+        return fixed_help_text()
+
+    # 3) Freier Prompt → LLM (mit Hot-Reload-Kontext)
     question = normalize_text(f"{cmd} {rest}".strip())
     if not question:
         return ("ℹ️ **Unklare Eingabe.** Beispiele: `!bot hallo`, `!bot einkaufen`, "
-                "`!bot Wo kann ich Brot kaufen?`")
-    return llm_answer(question, load_context(False))  # <— Hot-Reload hier genutzt
-
+                "`!bot wo kann ich Brot kaufen?`")
+    return llm_answer(question, load_context(False))
 # =======================
 # signal-cli Receive/Send
 # =======================
