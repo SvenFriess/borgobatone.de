@@ -71,14 +71,26 @@ def build_prompt(user_input: str) -> str:
 BOT_NUMBER = os.environ.get("BOT_NUMBER", "+4915755901211").strip()
 SIGNAL_CLI = os.environ.get("SIGNAL_CLI", "signal-cli").strip()
 GROUP_ID_STATIC = os.environ.get("GROUP_ID", "").strip()        # optional: feste Zielgruppe (Base64-ID)
-RECEIVE_TIMEOUT = int(os.environ.get("RECEIVE_TIMEOUT", "120")) # Sekunden
-USE_JSON = os.environ.get("USE_JSON", "1") == "1"               # JSON-Receiver standardmäßig an
+
+# RECEIVE_TIMEOUT aus ENV lesen, mit Sicherheits-Defaults
+timeout_raw = os.environ.get("RECEIVE_TIMEOUT", "30")
+try:
+    RECEIVE_TIMEOUT = int(timeout_raw)
+except ValueError:
+    print(f"⚠️ RECEIVE_TIMEOUT ungültig ('{timeout_raw}'), automatisch auf 30 gesetzt")
+    RECEIVE_TIMEOUT = 30
+
+if RECEIVE_TIMEOUT < 10 or RECEIVE_TIMEOUT > 600:
+    print(f"⚠️ RECEIVE_TIMEOUT außerhalb des erlaubten Bereichs (10–600): {RECEIVE_TIMEOUT}, automatisch auf 30 gesetzt")
+    RECEIVE_TIMEOUT = 30
+
+USE_JSON = os.environ.get("USE_JSON", "1") == "1"                # JSON-Receiver standardmäßig an
 
 BASE_DIR = Path(os.environ.get("BOT_BASE", str(Path.home() / "Projekte" / "borgobatone.de")))
 LOG_PATH = BASE_DIR / "bot.log"
 
 # =======================
-# Logging (nur Datei, keine Doppel-Handler)
+# Logging nur in Datei (kein Doppel-Stream)
 # =======================
 for h in logging.root.handlers[:]:
     logging.root.removeHandler(h)
@@ -87,6 +99,16 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[logging.FileHandler(LOG_PATH, encoding="utf-8")],
 )
+
+# =======================
+# Startkonfiguration ins Log schreiben
+# =======================
+logging.info("⚙️ Konfiguration:")
+logging.info(f"   BOT_NUMBER      = {BOT_NUMBER}")
+logging.info(f"   GROUP_ID_STATIC = {GROUP_ID_STATIC or '(keine)'}")
+logging.info(f"   CONTEXT_FILE    = {CONTEXT_FILE}")
+logging.info(f"   RECEIVE_TIMEOUT = {RECEIVE_TIMEOUT} Sekunden")
+logging.info(f"   USE_JSON        = {USE_JSON}")
 
 # =======================
 # LLM-Integration (optional)
@@ -200,8 +222,6 @@ def run_receive() -> Iterator[Tuple[str, str]]:
             line = raw.strip()
             if not line:
                 continue
-            # Für Debug-Zwecke **nicht** die komplette Rohflut doppelt loggen
-            # logging.debug(f"[RAW] {line}")
 
             if USE_JSON:
                 try:
@@ -210,7 +230,6 @@ def run_receive() -> Iterator[Tuple[str, str]]:
                     continue
                 env = obj.get("envelope") or {}
                 dm = env.get("dataMessage") or {}
-                # Quittungen ignorieren
                 if not dm:
                     continue
                 text = dm.get("message") or ""
@@ -220,13 +239,10 @@ def run_receive() -> Iterator[Tuple[str, str]]:
                     continue
                 yield gid, text
             else:
-                # Textparser als Fallback (nicht empfohlen)
                 if "dataMessage" not in line:
                     continue
-                # Keine saubere Extraktion möglich → ignorieren
                 continue
 
-        # hier kommen wir hin, wenn proc endet
         rc = proc.poll()
         if rc == 0:
             logging.warning("receive beendet (rc=0) – Neustart in 1s …")
@@ -235,7 +251,6 @@ def run_receive() -> Iterator[Tuple[str, str]]:
 
 def send_group_message(group_id: str, text: str) -> None:
     text = text or ""
-    # split in 1300-1400 Zeichen Segmente, Signal verträgt nicht unendlich lang
     segments = []
     MAX_LEN = 1400
     while text:
@@ -256,7 +271,6 @@ def main() -> None:
     logging.info("🚀 Bot gestartet")
     logging.info("🤖 Bot läuft und lauscht ...")
 
-    # Sanity-Log: welche Gruppe?
     if GROUP_ID_STATIC:
         logging.info(f"🎯 Feste GROUP_ID aktiv: {GROUP_ID_STATIC[:8]}…")
     else:
@@ -265,14 +279,12 @@ def main() -> None:
     while True:
         try:
             for group_id, message in run_receive():
-                # Filter auf feste Gruppe, falls gesetzt
                 if GROUP_ID_STATIC and group_id != GROUP_ID_STATIC:
-                    # Ignorieren – andere Gruppe
                     continue
 
                 msg_norm = normalize_text(message)
                 if not CMD_TRIGGER.search(msg_norm):
-                    continue  # nur !bot … beachten
+                    continue
 
                 cmd, rest = parse_command(msg_norm)
                 logging.debug(f"📥 Eingegangen: cmd='{cmd}' rest='{rest}'")
@@ -285,7 +297,7 @@ def main() -> None:
                 logging.debug("📤 Antwort gesendet")
         except Exception as e:
             logging.exception(f"Hauptloop-Fehler: {e}")
-            time.sleep(1)  # kurze Atempause
+            time.sleep(1)
 
 if __name__ == "__main__":
     main()
